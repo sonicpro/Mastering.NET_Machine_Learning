@@ -7,12 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="Accord.fsx" />
     <None Include="MathDotNet.fsx" />
     <Compile Include="Regression.fs" />
     <None Include="Script.fsx" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Accord.Statistics" Version="3.8.0" />
+    <PackageReference Include="FSharp.Data" Version="6.4.0" />
     <PackageReference Include="MathNet.Numerics" Version="5.0.0" />
   </ItemGroup>
 </Project>
