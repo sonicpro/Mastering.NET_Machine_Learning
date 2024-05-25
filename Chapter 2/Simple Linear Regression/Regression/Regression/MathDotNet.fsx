@@ -18,8 +18,7 @@ let meanX = Array.average axes
 let meanY = Array.average yies
 let A = meanY - b * meanX
 
-// MathNet.Numerics has a special type Fit that regress the linear dependency based
-// on the sample data.
+// MathNet.Numerics has a special module Fit that can do various types of regression.
 // We don't even need to open MathNet.Numerics.Statistics namespace
 // and calculate the means that the Pearson's correlation ourselves.
 open MathNet.Numerics
