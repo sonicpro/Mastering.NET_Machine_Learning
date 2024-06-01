@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using AdventureWorks.Models;
 
@@ -28,6 +24,7 @@ namespace AdventureWorks.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+            // This won't work. We must pass [PurchaseOrderID, PurchaseOrderDetailID] array to the Find() method.
             PurchaseOrderDetail purchaseOrderDetail = db.PurchaseOrderDetails.Find(id);
             if (purchaseOrderDetail == null)
             {
@@ -88,6 +85,7 @@ namespace AdventureWorks.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+            // This won't work. We must pass [PurchaseOrderID, PurchaseOrderDetailID] array to the Find() method.
             PurchaseOrderDetail purchaseOrderDetail = db.PurchaseOrderDetails.Find(id);
             if (purchaseOrderDetail == null)
             {
@@ -123,6 +121,7 @@ namespace AdventureWorks.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+            // This won't work. We must pass [PurchaseOrderID, PurchaseOrderDetailID] array to the Find() method.
             PurchaseOrderDetail purchaseOrderDetail = db.PurchaseOrderDetails.Find(id);
             if (purchaseOrderDetail == null)
             {
