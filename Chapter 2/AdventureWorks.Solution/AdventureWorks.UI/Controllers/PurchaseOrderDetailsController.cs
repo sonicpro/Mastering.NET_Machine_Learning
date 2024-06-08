@@ -3,6 +3,7 @@ using System.Linq;
 using System.Net;
 using System.Web.Mvc;
 using AdventureWorks.Models;
+using AdventureWorks.MachineLearning;
 
 namespace AdventureWorks.Controllers
 {
@@ -42,7 +43,7 @@ namespace AdventureWorks.Controllers
 
             var reviews = db.ProductReviews.GroupBy(pr => pr.ProductID, pr => pr.Rating)
                                        .Select(g => new { ProductID = g.Key, Average = g.Average()  });
-            var products = db.Products.Where(p => p.ProductSubcategoryID <4 );
+            var products = db.Products; //.Where(p => p.ProductSubcategoryID <4 );
 
             foreach (var review in reviews)
             {
@@ -139,6 +140,13 @@ namespace AdventureWorks.Controllers
             db.PurchaseOrderDetails.Remove(purchaseOrderDetail);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        // GET: PurchaseOrderDetails/PredictQuantity/1
+        public int PredictQuantity(int id)
+        {
+            var orderPrediction = new OrderPrediction();
+            return (int)orderPrediction.PredictQuantity(id);
         }
 
         protected override void Dispose(bool disposing)

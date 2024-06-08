@@ -13,6 +13,8 @@
     
     <div class="form-horizontal">
         <h4>Order Your Bikes</h4>
+        <br/>
+        <h5>We can predict only based on average review score, so please only choose bikes with the review score in parentheses.</h5>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
@@ -46,4 +48,13 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript">
+        $(document).ready(() => {
+            $('#ProductID').change(function () {
+                const productID = $(this).val();
+                $.get('/PurchaseOrderDetails/PredictQuantity/' + productID, (result) =>
+                    $('#OrderQty').val(result));
+            });
+        });
+    </script>
 }
