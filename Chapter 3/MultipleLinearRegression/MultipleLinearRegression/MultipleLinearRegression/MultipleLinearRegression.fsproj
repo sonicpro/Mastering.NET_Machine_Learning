@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="AccordDotNet7.fsx" />
     <None Include="Three Inputs Regression.fsx" />
     <None Include="AccordDotNet2.fsx" />
     <None Include="AccordDotNet.fsx" />
