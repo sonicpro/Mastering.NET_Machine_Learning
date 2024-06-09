@@ -53,7 +53,7 @@ connection.Open();
 let reader = command.ExecuteReader();
 while reader.Read() do
   productInfos.Add({ ProductId = reader.GetInt32(0);
-    AvgOrders = float (reader.GetDecimal(1)); AvgReviews = float (reader.GetDecimal(2)); ListPrice = float (reader.GetDecimal(3)); });
+    AvgOrders = float (reader.GetDecimal(1)); AvgReviews = float (reader.GetDecimal(2)); ListPrice = float (reader.GetDecimal(3)) });
 
 // Learn the relationship between the bike average reviews and list price and
 // its average ordered quantity by a seller customer.
