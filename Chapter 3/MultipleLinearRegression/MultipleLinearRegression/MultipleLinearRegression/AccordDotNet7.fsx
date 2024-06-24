@@ -1,8 +1,6 @@
 ﻿#r "nuget:Accord.Statistics, 3.8.0"
 
 open Accord.Statistics.Analysis
-open Accord.Statistics.Models.Regression
-open Accord.Statistics.Models.Regression.Fitting
 
 // Wikipedia data that shows exam passing values (1.0 - pass, 0.0 - does not) in
 // relation to hours spent on studying the day before an exam.
@@ -21,8 +19,8 @@ let pValue = analysis.ChiSquare.PValue;
 // If we do not study at all the day prior to an exam,
 // we will have Intercept percent chance of passing the exam (0.017 value means 1.7%).
 let coefficientOdds = analysis.Regression.GetOddsRatio (0);
-// BTW the odds ration can be computed by rising Euler's number e to
-// the power if a given coefficient.
+// BTW the odds ratio can be computed by rising Euler's number e to
+// the power of a given coefficient.
 let coefficientOdds' = 2.718281828 ** analysis.Regression.Intercept;
 // To pass an exam for sure we want to study coefficient[1] hours the day before an exam.
 let hoursOfStudyingOdds = analysis.Regression.GetOddsRatio (1);
