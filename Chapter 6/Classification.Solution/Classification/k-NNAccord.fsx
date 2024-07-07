@@ -1,8 +1,6 @@
 ﻿#r "nuget:Accord.Math, 3.8.0"
 #r "nuget:Accord.MachineLearning, 3.8.0"
 
-open Accord;
-open Accord.Math;
 open Accord.MachineLearning;
 
 // The first number in an input array is the number of hours studying the day before an exam.
